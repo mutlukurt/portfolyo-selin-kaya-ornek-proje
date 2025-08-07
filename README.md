@@ -2,6 +2,10 @@
 
 Modern ve responsive bir UI/UX tasarımcısı portföy web sitesi. Bu proje, Selin Kaya'nın tasarım çalışmalarını ve profesyonel hizmetlerini sergileyen kişisel portföy sitesidir.
 
+## 🌐 Live Demo
+
+**Canlı Demo**: [https://mutlukurt.github.io/portfolyo-selin-kaya-ornek-proje/](https://mutlukurt.github.io/portfolyo-selin-kaya-ornek-proje/)
+
 ## 🎨 Proje Özellikleri
 
 - **Responsive Tasarım**: Tüm cihazlarda mükemmel görünüm
@@ -156,6 +160,8 @@ portfolio/
 1. Repository'yi GitHub'a push edin
 2. Settings > Pages > Source: Deploy from a branch
 3. Branch: main, folder: / (root)
+
+**Canlı Demo**: [https://mutlukurt.github.io/portfolyo-selin-kaya-ornek-proje/](https://mutlukurt.github.io/portfolyo-selin-kaya-ornek-proje/)
 
 ### Netlify
 1. Netlify'e projeyi drag & drop
