@@ -416,6 +416,7 @@ footer p {
         transition: right 0.3s ease;
         z-index: 999;
         border-radius: 0 0 0 10px;
+        margin: 0;
     }
     
     nav ul.active {
