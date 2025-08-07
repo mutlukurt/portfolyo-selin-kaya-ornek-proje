@@ -12,6 +12,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
@@ -19,6 +20,8 @@ body {
     color: #333;
     background-color: #f7f7f7;
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
 }
 
 /* Variables for colors */
@@ -35,6 +38,14 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px; /* Add padding for mobile */
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 20px; /* More padding on mobile */
+    }
 }
 
 /* Header styles */
@@ -378,37 +389,178 @@ footer p {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    /* Prevent horizontal scroll */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    /* Header adjustments */
+    header .container {
+        position: relative;
+        padding: 1rem 20px;
+    }
+    
+    /* Navigation menu */
     nav ul {
-        position: absolute;
-        top: 100%;
-        right: 0;
+        position: fixed;
+        top: 70px; /* Adjust based on header height */
+        right: -100%; /* Start off-screen */
         background-color: var(--primary);
         flex-direction: column;
-        width: 200px;
-        text-align: right;
-        padding: 1rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
+        width: 250px;
+        height: auto;
+        text-align: left;
+        padding: 2rem 1rem;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 999;
+        border-radius: 0 0 0 10px;
     }
+    
     nav ul.active {
-        transform: translateX(0);
+        right: 0; /* Slide in from right */
     }
+    
+    nav ul li {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 0.5rem;
+    }
+    
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+    
+    nav a {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1.1rem;
+    }
+    
+    /* Mobile menu toggle */
     .menu-toggle {
         display: flex;
+        z-index: 1000;
     }
+    
     .menu-toggle.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+    
     .menu-toggle.active .bar:nth-child(2) {
         opacity: 0;
     }
+    
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-    header .container {
-        position: relative;
+    
+    /* Hero section adjustments */
+    .hero {
+        height: 100vh;
+        background-position: center;
     }
-    nav ul li {
+    
+    .hero-content {
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
         margin-bottom: 1rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* About section */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Services section */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Projects section */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .project-card img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Contact section */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* General text adjustments */
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    header .container {
+        padding: 1rem 15px;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    nav ul {
+        width: 100%;
+        right: -100%;
+        top: 60px;
+    }
+    
+    .menu-toggle .bar {
+        width: 22px;
+        height: 2px;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
     }
 }
